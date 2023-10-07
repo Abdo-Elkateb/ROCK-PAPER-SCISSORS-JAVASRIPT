@@ -6,6 +6,7 @@ let rusult = document.getElementById("rusult")
 let psdipleChoice = document.querySelectorAll('button')
 let userId
 
+
 // startPlay 
 startPlay() 
 
@@ -55,21 +56,21 @@ function rulesGame() {
         (coputerChoice.textContent == 'scissors' && yourChoice.textContent == 'peper' || yourChoice.textContent == 'rock')
     ) {
         swal({
-            title: "you lost?",
+            title: "you lost!",
             text: "Do you want to play again?",
             icon: "warning",
             buttons: true,
             dangerMode: true,
         })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Poof! Your imaginary file has been deleted!", {
-                        icon: "success",
-                    });
-                } else {
-                    swal("Your imaginary file is safe!");
-                }
-            });
+            // .then((willDelete) => {
+            //     if (willDelete) {
+            //         swal("Poof! Your imaginary file has been deleted!", {
+            //             icon: "success",
+            //         });
+            //     } else {
+            //         swal("Your imaginary file is safe!");
+            //     }
+            // });
         rusult.textContent = "lose"
 
     }
@@ -78,11 +79,17 @@ function rulesGame() {
         (yourChoice.textContent == 'rock' && coputerChoice.textContent == 'peper') ||
         (yourChoice.textContent == 'scissors' && coputerChoice.textContent == 'peper' || coputerChoice.textContent == 'rock')
     ) {
-
         swal("Congrats!", "You are the winner!", "success");
         rusult.textContent = "win"
-
     }
+}
+//  rest
 
-
+document.getElementById("rest").addEventListener("click", function () {
+    rest()
+})
+function rest() {
+   coputerChoice.textContent = "" ,
+   yourChoice.textContent = "" ,
+   rusult.textContent = "" 
 }
