@@ -8,15 +8,15 @@ let userId
 
 
 // startPlay 
-startPlay() 
+startPlay()
 
 function startPlay() {
-psdipleChoice.forEach(psdipleChoice => psdipleChoice.addEventListener('click', (e) => {
-    userId = e.target.id
-    yourChoice.innerHTML = userId
-    autoNumber()
-    rulesGame()
-}))
+    psdipleChoice.forEach(psdipleChoice => psdipleChoice.addEventListener('click', (e) => {
+        userId = e.target.id
+        yourChoice.innerHTML = userId
+        autoNumber()
+        rulesGame()
+    }))
 }
 
 //  autoNumber
@@ -53,7 +53,7 @@ function rulesGame() {
     // lost
     if (
         (coputerChoice.textContent == 'rock' && yourChoice.textContent == 'peper') ||
-        (coputerChoice.textContent == 'scissors' && yourChoice.textContent == 'peper' || yourChoice.textContent == 'rock')
+        (coputerChoice.textContent == 'scissors' && (yourChoice.textContent == 'peper' || yourChoice.textContent == 'rock'))
     ) {
         swal({
             title: "you lost!",
@@ -62,22 +62,22 @@ function rulesGame() {
             buttons: true,
             dangerMode: true,
         })
-            // .then((willDelete) => {
-            //     if (willDelete) {
-            //         swal("Poof! Your imaginary file has been deleted!", {
-            //             icon: "success",
-            //         });
-            //     } else {
-            //         swal("Your imaginary file is safe!");
-            //     }
-            // });
+        // .then((willDelete) => {
+        //     if (willDelete) {
+        //         swal("Poof! Your imaginary file has been deleted!", {
+        //             icon: "success",
+        //         });
+        //     } else {
+        //         swal("Your imaginary file is safe!");
+        //     }
+        // });
         rusult.textContent = "lose"
 
     }
     // the winner
     if (
         (yourChoice.textContent == 'rock' && coputerChoice.textContent == 'peper') ||
-        (yourChoice.textContent == 'scissors' && coputerChoice.textContent == 'peper' || coputerChoice.textContent == 'rock')
+        (yourChoice.textContent == 'scissors' && (coputerChoice.textContent == 'peper' || coputerChoice.textContent == 'rock'))
     ) {
         swal("Congrats!", "You are the winner!", "success");
         rusult.textContent = "win"
@@ -89,7 +89,7 @@ document.getElementById("rest").addEventListener("click", function () {
     rest()
 })
 function rest() {
-   coputerChoice.textContent = "" ,
-   yourChoice.textContent = "" ,
-   rusult.textContent = "" 
+    coputerChoice.textContent = "",
+        yourChoice.textContent = "",
+        rusult.textContent = ""
 }
