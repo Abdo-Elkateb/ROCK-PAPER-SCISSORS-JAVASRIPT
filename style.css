@@ -1,28 +1,32 @@
 body {
-    background: #2a0aadf2;
+    
+    background: #12d96ff2;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    height: 100vh;
+    text-transform:capitalize;
 }
 
 .card {
-    background: #18054bf2;
+    background: #0c4818f2;
     width: 40%;
     color:#fff;
     padding: 20px;
     border-radius: 20px;
+
 }
 button {
-    background:#e3fd36f2;
+    background:#19ae7ff2;
     padding:5px 20px;
     border:none;
     border-radius: 10px;
-    color:#333;
+    color:#fff;
     margin-left: 10px;
     cursor: pointer;
+    text-transform:uppercase;
     transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 button:hover {
